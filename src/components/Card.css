@@ -76,10 +76,6 @@ a {
     margin-right: 1rem;
 }
 
-/* .publication-details {
-    margin-right: 1rem;
-} */
-
 .author {
     display: inline-block;
     margin-bottom: 0.5rem;
@@ -164,6 +160,36 @@ a {
     transform: scaleX(1);
 }
 
+/* Animating author and date name on card hover */
+
+.publication-details {
+    transition: transform 0.5s;
+    transform: translateX(-100%);
+}
+
+.card:hover .publication-details  {
+    transform: translateX(0);
+}
+
+.author {
+    transform: translateY(-3rem);
+    opacity: 0;
+}
+
+.date {
+    transform: translateY(3rem);
+    opacity: 0;
+/* duration, delay */
+    transition: all 0.5s 0.3s;
+}
+
+.card:hover .author,
+.card:hover .date {
+    transform: translateY(0);
+    opacity: 1;
+}
+/* Animating author and date name on card hover */
+
 @media screen and (min-width: 600px) {
     .card {
         flex-direction: row;
@@ -174,36 +200,6 @@ a {
         flex-basis: 40%;
         height: unset;
     }
-
-    .publication-details {
-        transition: transform 0.5s;
-        transform: translateX(-100%);
-    }
-
-    .card:hover .publication-details  {
-        transform: translateX(0);
-    }
-
-/* Animating author and date name on card hover */
-    .author {
-        transform: translateY(-3rem);
-        opacity: 0;
-    }
-
-    .date {
-        transform: translateY(3rem);
-        opacity: 0;
-    /* duration, delay */
-        transition: all 0.5s 0.3s;
-    }
-
-    .card:hover .author,
-    .card:hover .date {
-        transform: translateY(0);
-        opacity: 1;
-    }
-/* Animating author and date name on card hover */
-
 
     .post-data {
         flex-basis: 60%;
